@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Link from "next/link";
 import { Movie } from "../types";
@@ -12,6 +12,11 @@ export type MovieListItemProps = {
 export default function MoviesListItem(props: MovieListItemProps) {
     const { movie } = props
     const [selected, setSelected] = useState<Boolean>(false);
+
+    useEffect(() => {
+        console.log('selected', selected);
+    }, [selected])
+
     return (
         <li onClick={() => setSelected(prev => !prev)}>
             <div>

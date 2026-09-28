@@ -7,7 +7,8 @@ export async function fetchMovies() {
 }
 
 export async function fetchMovie(id: number) {
-    const response = await fetch(`${BASE_URL}/movies/${id}`)
+    console.log('id value', id)
+    const response = await fetch(`${BASE_URL}/reviews/${id}`)
     if (!response.ok) throw new Error(`Something went wrong: ${response.status}`);
     return response.json();
 }
